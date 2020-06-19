@@ -1,12 +1,5 @@
 import sys
 
-if len(sys.argv) != 2:
-    print("Usage: python caesar.py k")
-    exit(1)
-else:
-    k = int(sys.argv[1])
-
-
 def caesar (text, k):
 
     cipher = ""
@@ -21,7 +14,13 @@ def caesar (text, k):
     return cipher
 
 
-text = list(raw_input("plaintext: "))
-ciphertext = caesar(text, k)
-print("ciphertext: {}".format(ciphertext))
-print("\n")
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python caesar.py k")
+        exit(1)
+    else:
+        k = int(sys.argv[1])
+    text = list(raw_input("plaintext: "))
+    ciphertext = caesar(text, k)
+    print("ciphertext: {}".format(ciphertext))
+    print("\n")
